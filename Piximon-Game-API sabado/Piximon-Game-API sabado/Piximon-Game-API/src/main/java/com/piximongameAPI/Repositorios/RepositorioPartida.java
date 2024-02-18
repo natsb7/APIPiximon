@@ -2,7 +2,6 @@ package com.piximongameAPI.Repositorios;
 
 
 import com.piximongameAPI.Entidades.Jugador;
-import com.piximongameAPI.Entidades.Combate;
 import com.piximongameAPI.Entidades.Partida;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

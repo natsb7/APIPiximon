@@ -1,5 +1,7 @@
 package com.piximongameAPI.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,10 +23,12 @@ public class Combate {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
+    @JsonBackReference("usuario-combate")
     private Usuario usuario;
 
     @OneToOne
     @JoinColumn(name = "jugador_id")
+    @JsonBackReference("jugador-combate")
     private Jugador jugador;
 
     @Column(name = "fecha")
@@ -36,10 +40,9 @@ public class Combate {
     @Column(name = "jugador_winner")
     private int jugadorWinner;
 
-    /*@OneToMany(mappedBy = "ronda", cascade = CascadeType.ALL)
-    private List<Ronda> rondas = new ArrayList<>();*/
 
     @OneToMany(mappedBy = "combate")
+    @JsonManagedReference("combate-rondas")
     private List<Ronda> rondas;
 
 }

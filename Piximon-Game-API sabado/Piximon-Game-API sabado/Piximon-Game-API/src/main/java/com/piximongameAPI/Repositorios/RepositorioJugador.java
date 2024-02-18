@@ -17,10 +17,13 @@ public interface RepositorioJugador extends JpaRepository<Jugador, Integer> {
     List<Jugador> findJugadoresByPartidaId(int id);
 
     //SABIENDO EL fk_usuario buscar qué jugador es en la tabla jugadores
-    @Query(value = "SELECT * FROM jugadores WHERE fk_usuario =:nombre", nativeQuery = true)
-    Usuario comprobarSiExisteUsuario(String nombre);
+    @Query(value = "SELECT * FROM jugadores WHERE nombre_jugador =:nombre", nativeQuery = true)
+    Jugador comprobarSiExisteJugador(String nombre);
 
     @Query(value = "SELECT * FROM jugadores WHERE id =:id", nativeQuery = true)
     Jugador findById(int id);
+
+    @Query(value = "SELECT * FROM jugadores", nativeQuery = true)
+    List<Jugador> obtenerTodosLosJugadores();
 
 }

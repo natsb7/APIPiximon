@@ -1,7 +1,6 @@
 package com.piximongameAPI.Servicios.Implementacion;
 
 import com.piximongameAPI.Entidades.Jugador;
-import com.piximongameAPI.Entidades.Combate;
 import com.piximongameAPI.Entidades.Partida;
 import com.piximongameAPI.Entidades.Usuario;
 import com.piximongameAPI.Repositorios.RepositorioCarta;
@@ -51,9 +50,11 @@ public class ServicioJugadorImpl implements ServicioJugador {
     private ServicioCartaImpl servicioCarta;
 
    // ----------------- Métodos del servicio -----------------
+
+
     @Override
-    public List<Jugador> obtenerTodos() {
-        return repositorioJugador.findAll();
+    public List<Jugador> obtenerTodosLosJugadores(){
+    return repositorioJugador.obtenerTodosLosJugadores();
     }
 
     @Override
@@ -122,6 +123,11 @@ public class ServicioJugadorImpl implements ServicioJugador {
     @Override
     public List<Jugador> findJugadoresByPartidaId(int id) {
         return repositorioJugador.findJugadoresByPartidaId(id);
+    }
+
+    @Override
+    public Jugador comprobarSiExisteJugador(String nombre) {
+        return repositorioJugador.comprobarSiExisteJugador(nombre);
     }
 
 

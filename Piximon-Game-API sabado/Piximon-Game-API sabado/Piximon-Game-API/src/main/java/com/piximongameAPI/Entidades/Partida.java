@@ -1,5 +1,6 @@
 package com.piximongameAPI.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class Partida {
     private int id;
 
     @OneToMany(mappedBy = "partida")
+    @JsonManagedReference("jugador-partida")
     private List<Jugador> jugadores;
 
 }

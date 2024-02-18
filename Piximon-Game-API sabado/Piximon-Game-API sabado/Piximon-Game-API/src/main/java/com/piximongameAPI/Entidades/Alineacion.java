@@ -1,6 +1,7 @@
 package com.piximongameAPI.Entidades;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class Alineacion {
     private String zona;
 
     @OneToMany(mappedBy = "alineacion", cascade = CascadeType.ALL)
+    @JsonManagedReference("cartas-alineacion")
     private List<Carta> cartas = new ArrayList<>();
 
     public Alineacion(String zona) {

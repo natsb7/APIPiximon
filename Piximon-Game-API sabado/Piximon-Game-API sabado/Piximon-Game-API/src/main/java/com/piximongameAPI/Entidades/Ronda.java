@@ -1,6 +1,8 @@
 package com.piximongameAPI.Entidades;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,8 +19,9 @@ public class Ronda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "combate_id")
+    @JsonBackReference("combate-rondas")
     private Combate combate; // Cambiar el nombre de la propiedad a 'ronda'
 
     @Column
