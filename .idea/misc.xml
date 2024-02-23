@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Piximon-Game-API sabado/Piximon-Game-API sabado/Piximon-Game-API/pom.xml" />
+        <option value="$PROJECT_DIR$/Piximon-Game-API/pom.xml" />
       </list>
     </option>
   </component>
